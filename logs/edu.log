@@ -1,0 +1,72 @@
+2021-03-09 18:28:14.689  INFO 21872 --- [edu,] [main] com.zhengzb.edu.EduApplication           : Starting EduApplication using Java 1.8.0_191 on join with PID 21872 (C:\secondWork\workspacce\edu\target\classes started by john in C:\secondWork\workspacce\edu)
+2021-03-09 18:28:14.693  INFO 21872 --- [edu,] [main] com.zhengzb.edu.EduApplication           : No active profile set, falling back to default profiles: default
+2021-03-09 18:28:16.024  INFO 21872 --- [edu,] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-09 18:28:16.027  INFO 21872 --- [edu,] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-09 18:28:16.146  INFO 21872 --- [edu,] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 86 ms. Found 0 Redis repository interfaces.
+2021-03-09 18:28:17.059  INFO 21872 --- [edu,] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-03-09 18:28:17.132  INFO 21872 --- [edu,] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-09 18:28:17.133  INFO 21872 --- [edu,] [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-09 18:28:17.265  INFO 21872 --- [edu,] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-09 18:28:17.265  INFO 21872 --- [edu,] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2512 ms
+2021-03-09 18:28:17.967  INFO 21872 --- [edu,] [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-09 18:28:18.098 ERROR 21872 --- [edu,] [main] com.alibaba.druid.pool.DruidDataSource   : testWhileIdle is true, validationQuery not set
+2021-03-09 18:28:18.108  INFO 21872 --- [edu,] [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-09 18:28:18.183  WARN 21872 --- [edu,] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'wxAop': Unsatisfied dependency expressed through field 'accountTokenService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'accountTokenServiceImpl': Unsatisfied dependency expressed through field 'userBusinessService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userBusinessServiceImpl': Unsatisfied dependency expressed through field 'userAccountInfoService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userAccountInfoService': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userAccountInfoMapper' defined in file [C:\secondWork\workspacce\edu\target\classes\com\zhengzb\edu\mybatis\mapper\UserAccountInfoMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [com/baomidou/mybatisplus/autoconfigure/MybatisPlusAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception; nested exception is java.lang.BootstrapMethodError: java.lang.NoSuchMethodError: org.apache.ibatis.session.Configuration.setVfsImpl(Ljava/lang/Class;)V
+2021-03-09 18:28:18.184  INFO 21872 --- [edu,] [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2021-03-09 18:28:18.186  INFO 21872 --- [edu,] [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed
+2021-03-09 18:28:18.226  INFO 21872 --- [edu,] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-03-09 18:28:18.242  INFO 21872 --- [edu,] [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-03-09 18:28:18.277 ERROR 21872 --- [edu,] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+An attempt was made to call a method that does not exist. The attempt was made from the following location:
+
+    java.lang.invoke.MethodHandleNatives.resolve(Native Method)
+
+The following method did not exist:
+
+    org.apache.ibatis.session.Configuration.setVfsImpl(Ljava/lang/Class;)V
+
+The method's class, org.apache.ibatis.session.Configuration, is available from the following locations:
+
+    jar:file:/C:/secondWork/lib/org/mybatis/mybatis/3.3.0/mybatis-3.3.0.jar!/org/apache/ibatis/session/Configuration.class
+
+The class hierarchy was loaded from the following locations:
+
+    org.apache.ibatis.session.Configuration: file:/C:/secondWork/lib/org/mybatis/mybatis/3.3.0/mybatis-3.3.0.jar
+
+
+Action:
+
+Correct the classpath of your application so that it contains a single, compatible version of org.apache.ibatis.session.Configuration
+
+2021-03-09 19:01:51.497  INFO 24820 --- [edu,] [main] com.zhengzb.edu.EduApplication           : Starting EduApplication using Java 1.8.0_191 on join with PID 24820 (C:\secondWork\workspacce\edu\target\classes started by john in C:\secondWork\workspacce\edu)
+2021-03-09 19:01:51.504  INFO 24820 --- [edu,] [main] com.zhengzb.edu.EduApplication           : No active profile set, falling back to default profiles: default
+2021-03-09 19:01:53.458  INFO 24820 --- [edu,] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2021-03-09 19:01:53.461  INFO 24820 --- [edu,] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2021-03-09 19:01:53.558  INFO 24820 --- [edu,] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 0 Redis repository interfaces.
+2021-03-09 19:01:54.546  INFO 24820 --- [edu,] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2021-03-09 19:01:54.561  INFO 24820 --- [edu,] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-09 19:01:54.561  INFO 24820 --- [edu,] [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.43]
+2021-03-09 19:01:54.842  INFO 24820 --- [edu,] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-09 19:01:54.842  INFO 24820 --- [edu,] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3204 ms
+2021-03-09 19:01:55.563  INFO 24820 --- [edu,] [main] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2021-03-09 19:01:55.732 ERROR 24820 --- [edu,] [main] com.alibaba.druid.pool.DruidDataSource   : testWhileIdle is true, validationQuery not set
+2021-03-09 19:01:55.744  INFO 24820 --- [edu,] [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2021-03-09 19:02:00.339  INFO 24820 --- [edu,] [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-03-09 19:02:00.569  INFO 24820 --- [edu,] [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-09 19:02:01.104  INFO 24820 --- [edu,] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2021-03-09 19:02:01.106  INFO 24820 --- [edu,] [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-03-09 19:02:01.136  INFO 24820 --- [edu,] [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-03-09 19:02:01.191  INFO 24820 --- [edu,] [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-03-09 19:02:01.225  INFO 24820 --- [edu,] [main] com.zhengzb.edu.EduApplication           : Started EduApplication in 11.437 seconds (JVM running for 15.049)
+2021-03-09 19:05:22.794  INFO 24820 --- [edu,] [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-03-09 19:05:22.799  INFO 24820 --- [edu,] [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closing ...
+2021-03-09 19:05:22.809  INFO 24820 --- [edu,] [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} closed

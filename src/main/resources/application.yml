@@ -1,0 +1,95 @@
+server:
+  port: 9999
+
+
+# 数据源
+spring:
+  application:
+    name: edu
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    druid:
+      access-to-underlying-connection-allowed: false
+      filters: stat
+      initial-size: 1
+      max-active: 20
+      min-idle: 1
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      async-init: true
+      keep-alive: true
+      #oracle
+      #pool-prepared-statements: true
+      #max-open-prepared-statements: 20
+    username: ser
+    password: ser
+    url:  jdbc:p6spy:mysql://192.168.10.41:3306/medical?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowMultiQueries=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+  main:
+    allow-bean-definition-overriding: true
+  redis:
+    host: 192.168.10.41
+    password: ylredis
+    lettuce:
+      pool:
+        min-idle: 1
+        max-idle: 10
+        max-active: 20
+        max-wait: 3000ms
+        time-between-eviction-runs: 5m
+      shutdown-timeout: 100ms
+
+# mybaits-plus配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+      table-underline: true
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+# okhtttp 3.1 配置
+ok:
+  http:
+    connect-timeout: 30
+    read-timeout: 30
+    write-timeout: 30
+    max-idle-connections: 200
+    keep-alive-duration: 300
+
+# swagger 配置
+swagger:
+  title: 接口文档
+  license: 版权所有
+  licenseUrl: http://localhost
+  terms-of-service-url: http://localhost
+  basePackage: com.zhengzb
+  contact:
+    email:
+    url: http://localhost
+  authorization:
+    name: app OAuth
+    auth-regex: ^.*$
+    authorization-scope-list:
+      - scope: server
+        description: server all
+
+
+# liog4j日志
+logging:
+  file:
+    name: ./logs/${spring.application.name}.log
+    max-size: 100MB
+    max-history: 15
+    total-size-cap: 2GB
+  pattern:
+    console: "${CONSOLE_LOG_PATTERN:%clr(%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:%5p}) %clr(${PID:- }){magenta} %clr(---){faint} [${spring.application.name},%X{traceId}] %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}}"
+    file: "${FILE_LOG_PATTERN:%d{${LOG_DATEFORMAT_PATTERN:yyyy-MM-dd HH:mm:ss.SSS}} ${LOG_LEVEL_PATTERN:%5p} ${PID:- } --- [${spring.application.name},%X{traceId}] [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:%wEx}}"
